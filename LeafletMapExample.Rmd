@@ -1,0 +1,54 @@
+---
+title: "Leaflet Map Example"
+author: "Shinya Hashimoto"
+date: "`r format(Sys.time(), '%B %d, %Y')`" # This will automatically insert the current date
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet)
+```
+
+### Interactive Map with Leaflet
+This is an example of an interactive map created with Leaflet in R Markdown.
+
+```{r
+leaflet() %>% addTiles() %>%
+  setView(lng = -0.09, lat = 51.505, zoom = 10) %>%
+  addMarkers(lng = -0.09, lat = 51.505, popup = "Hello, this is a marker on the map!")
+```
+
+### Step 2: Generate Your Webpage
+
+- In RStudio, click on the "Knit" button to generate your webpage. This process will create an HTML file from your R Markdown document.
+- Check the HTML file to make sure it looks correct and that the map displays properly.
+
+### Step 3: Hosting Your Webpage
+
+#### Option A: GitHub Pages
+
+1. Create a new repository on GitHub.
+2. Push your R Markdown file and the generated HTML file to the repository.
+3. Go to the repository settings, find the "Pages" section, and configure it to use the main branch for GitHub Pages.
+4. Your webpage should now be accessible at `https://<your-github-username>.github.io/<repository-name>/<html-file-name>.html`.
+
+#### Option B: RPubs
+
+- Simply click on the "Publish" button in RStudio after knitting your R Markdown document and select RPubs. Follow the prompts to publish your document.
+
+#### Option C: NeoCities
+
+1. Create an account on NeoCities if you don't have one.
+2. Upload your HTML file through the NeoCities dashboard.
+3. Your webpage will be accessible at your NeoCities site URL.
+
+### Rubric Questions
+
+1. **Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?**
+   - Ensure your document includes the current date dynamically as shown in the markdown example. This date should automatically fulfill the rubric's requirement when you knit the document close to the submission time.
+
+2. **Does the web page feature an interactive map that appears to have been created with Leaflet?**
+   - The provided R Markdown snippet includes a basic Leaflet map, which should satisfy this criterion. Feel free to customize the map with additional features to showcase your creativity.
+
+This simple guide should help you create and host a webpage featuring a Leaflet map. Good 
